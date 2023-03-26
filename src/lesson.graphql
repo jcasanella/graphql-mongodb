@@ -1,0 +1,11 @@
+type Lesson {
+    id: ID!
+    name: String!
+    startDate: String
+    endDate: String
+}
+
+type Query {
+  getLessonById(id: ID!): Lesson
+  getAllLessons: [Lesson]
+}

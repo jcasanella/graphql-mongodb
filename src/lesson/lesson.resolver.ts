@@ -3,7 +3,7 @@ import { Lesson } from 'src/graphql';
 
 @Resolver('Lesson')
 export class LessonResolver {
-    @Query('getLessonById')
+    @Query('lesson')
     async getLessonById(@Args('id') Id: string): Promise<Lesson> {
         let l: Lesson = {
             id: 'id1',
@@ -15,7 +15,7 @@ export class LessonResolver {
         return Promise.resolve(l);
     }
 
-    @Query('getAllLessons')
+    @Query('lessons')
     async getAllLessons(): Promise<Lesson[]> {
         let lessons: Lesson[] = new Array(
             {id: 'id1', name: 'name1', startDate: 'sd1', endDate: 'ed1'} as Lesson,

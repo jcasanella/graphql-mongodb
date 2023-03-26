@@ -6,6 +6,6 @@ type Lesson {
 }
 
 type Query {
-  getLessonById(id: ID!): Lesson
-  getAllLessons: [Lesson]
+  lesson(id: ID!): Lesson
+  lessons: [Lesson]
 }

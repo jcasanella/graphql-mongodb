@@ -16,9 +16,9 @@ export class Lesson {
 }
 
 export abstract class IQuery {
-    abstract getLessonById(id: string): Nullable<Lesson> | Promise<Nullable<Lesson>>;
+    abstract lesson(id: string): Nullable<Lesson> | Promise<Nullable<Lesson>>;
 
-    abstract getAllLessons(): Nullable<Nullable<Lesson>[]> | Promise<Nullable<Nullable<Lesson>[]>>;
+    abstract lessons(): Nullable<Nullable<Lesson>[]> | Promise<Nullable<Nullable<Lesson>[]>>;
 }
 
 type Nullable<T> = T | null;

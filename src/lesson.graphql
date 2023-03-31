@@ -1,5 +1,5 @@
 type Lesson {
-    id: ID!
+    _id: ID!
     name: String!
     startDate: String
     endDate: String
@@ -8,4 +8,8 @@ type Lesson {
 type Query {
   lesson(id: ID!): Lesson
   lessons: [Lesson]
+}
+
+type Mutation {
+    createLesson(name: String!, startDate: String, endDate: String): Lesson
 }

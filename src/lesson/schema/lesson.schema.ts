@@ -5,17 +5,17 @@ export type CatDocument = HydratedDocument<Lesson>;
 
 @Schema()
 export class Lesson {
-    @Prop()
-    id: string;
+    @Prop({ required: true })
+    _id: string;
 
-    @Prop()
+    @Prop({ required: true } )
     name: string;
 
     @Prop()
-    startDate: string;
+    startDate?: string;
 
     @Prop()
-    endDate: string;
+    endDate?: string;
 }
 
 export const LessonSchema = SchemaFactory.createForClass(Lesson);

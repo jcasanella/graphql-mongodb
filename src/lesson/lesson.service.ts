@@ -11,4 +11,14 @@ export class LessonService {
         const createdLesson = await this.lessonModel.create({ _id: id, name: name, startDate: startDate, endDate: endDate});
         return createdLesson;
     }
+
+    async findById(id: string): Promise<Lesson> {
+        const lesson = await this.lessonModel.findById(id).exec();
+        return lesson;
+    }
+
+    async getAll(): Promise<Lesson[]> {
+        const lessons = await this.lessonModel.find({});
+        return lessons;
+    }
 }

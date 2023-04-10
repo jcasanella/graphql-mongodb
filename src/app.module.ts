@@ -4,6 +4,7 @@ import { GraphQLModule } from '@nestjs/graphql';
 import { join } from 'path';
 import { LessonModule } from './lesson/lesson.module';
 import { MongooseModule } from '@nestjs/mongoose';
+import { StudentModule } from './student/student.module';
 
 @Module({
   imports: [
@@ -16,7 +17,8 @@ import { MongooseModule } from '@nestjs/mongoose';
       },
     }),
     MongooseModule.forRoot('mongodb://localhost/school'),
-    LessonModule
+    LessonModule,
+    StudentModule
   ],
 })
 export class AppModule {}

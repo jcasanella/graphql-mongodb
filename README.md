@@ -73,3 +73,9 @@ Nest is an MIT-licensed open source project. It can grow thanks to the sponsors 
 Nest is [MIT licensed](LICENSE).
 
 ts-node generate-typings     
+
+https://github.com/typestack/class-validator
+
+pnpm nest g module student
+pnpm nest g resolver student
+pnpm nest g service student

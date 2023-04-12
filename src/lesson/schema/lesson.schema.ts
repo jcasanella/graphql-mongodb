@@ -11,11 +11,17 @@ export class Lesson {
     @Prop({ required: true } )
     name: string;
 
-    @Prop()
+    @Prop({ required: false })
     startDate?: string;
 
-    @Prop()
+    @Prop({ required: false })
     endDate?: string;
+
+    @Prop({
+        type: [String],
+        required: false
+    })
+    students?: string[];
 }
 
 export const LessonSchema = SchemaFactory.createForClass(Lesson);

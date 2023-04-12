@@ -12,4 +12,5 @@ type Query {
 
 type Mutation {
     createLesson(name: String!, startDate: String, endDate: String): Lesson
+    assignStudents(id: String!, studentsId: [String!]!): Lesson
 }

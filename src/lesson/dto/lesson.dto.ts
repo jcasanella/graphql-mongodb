@@ -8,13 +8,13 @@ export class LessonDto {
         message: 'Name is too short',
     })
     @IsString({ message: 'Name is not defined properly'})
-    name: string;
+    readonly name: string;
     
     @Field({ nullable: true })
     @IsDateString()
-    startDate?: string;
+    readonly startDate?: string;
     
     @Field({ nullable: true })
     @IsDateString()
-    endDate?: string;
+    readonly endDate?: string;
 }

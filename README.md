@@ -79,3 +79,5 @@ https://github.com/typestack/class-validator
 pnpm nest g module student
 pnpm nest g resolver student
 pnpm nest g service student
+
+docker run --name mongo -p 27017:27017 -d mongo

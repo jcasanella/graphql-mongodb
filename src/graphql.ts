@@ -28,6 +28,8 @@ export abstract class IQuery {
 export abstract class IMutation {
     abstract createLesson(name: string, startDate?: Nullable<string>, endDate?: Nullable<string>): Nullable<Lesson> | Promise<Nullable<Lesson>>;
 
+    abstract assignStudents(id: string, studentsId: string[]): Nullable<Lesson> | Promise<Nullable<Lesson>>;
+
     abstract createStudent(name: string, surname: string, dateOfBirth?: Nullable<string>): Nullable<Student> | Promise<Nullable<Student>>;
 }
 

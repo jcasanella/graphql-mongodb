@@ -3,6 +3,7 @@ import { Lesson } from 'src/graphql';
 import { LessonService } from './lesson.service';
 import { v4 as uuidv4  } from 'uuid';
 import { LessonDto } from './dto/lesson.dto';
+import { LessonStudentsDto } from './dto/lesson-students.dto';
 
 @Resolver('Lesson')
 export class LessonResolver {
@@ -22,5 +23,11 @@ export class LessonResolver {
     async createLesson(@Args() lessonDto: LessonDto): Promise<Lesson> {
         const { name, startDate, endDate } = lessonDto;
         return this.lessonService.create(uuidv4(), name, startDate, endDate);
+    }
+
+    @Mutation('assignStudents')
+    async assignStudents(@Args() lessonStudentDto: LessonStudentsDto): Promise<Lesson> {
+        const { id, studentsId } = lessonStudentDto;
+        return this.lessonService.assignStudents(id, studentsId);
     }
 }

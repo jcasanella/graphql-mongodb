@@ -13,6 +13,7 @@ export class Lesson {
     name: string;
     startDate?: Nullable<string>;
     endDate?: Nullable<string>;
+    studentsId?: Nullable<Nullable<string>[]>;
 }
 
 export abstract class IQuery {

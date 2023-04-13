@@ -27,9 +27,13 @@ export class LessonService {
     }
 
     async assignStudents(id: string, studentsId: string[]): Promise<Lesson> {
-        this.logger.log(`assignStudents ${studentsId} with lesson Id ${id}`);
-        // const lesson = await this.lessonModel.
-        const lesson = await this.lessonModel.findByIdAndUpdate(id, { students: studentsId });
+        this.logger.log(`assignStudents with LessonId ${id} and StudentsId ${studentsId}`);
+        let lesson = await this.lessonModel.findById(id);
+        if (lesson) {
+            let students = new Set([...studentsId, ...lesson.studentsId]);
+            lesson = await this.lessonModel.findByIdAndUpdate(id, { studentsId: Array.from(students) }, { returnOriginal: false });
+        }
+
         return lesson;
     }
 }

@@ -21,7 +21,7 @@ export class Lesson {
         type: [String],
         required: false
     })
-    students?: string[];
+    studentsId?: string[];
 }
 
 export const LessonSchema = SchemaFactory.createForClass(Lesson);

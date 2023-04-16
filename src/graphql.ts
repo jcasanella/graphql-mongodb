@@ -31,7 +31,7 @@ export abstract class IMutation {
 
     abstract assignStudents(id: string, studentsId: string[]): Nullable<Lesson> | Promise<Nullable<Lesson>>;
 
-    abstract createStudent(name: string, surname: string, dateOfBirth?: Nullable<string>): Nullable<Student> | Promise<Nullable<Student>>;
+    abstract createStudent(lessonId: string, name: string, surname: string, dateOfBirth?: Nullable<string>): Nullable<Student> | Promise<Nullable<Student>>;
 }
 
 export class Student {

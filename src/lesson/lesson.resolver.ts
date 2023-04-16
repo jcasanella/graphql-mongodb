@@ -25,9 +25,9 @@ export class LessonResolver {
         return this.lessonService.create(uuidv4(), name, startDate, endDate);
     }
 
-    @Mutation('assignStudents')
-    async assignStudents(@Args() lessonStudentDto: LessonStudentsDto): Promise<Lesson> {
-        const { id, studentsId } = lessonStudentDto;
-        return this.lessonService.assignStudents(id, studentsId);
-    }
+    // @Mutation('assignStudents')
+    // async assignStudents(@Args() lessonStudentDto: LessonStudentsDto): Promise<Lesson> {
+    //     const { id, studentsId } = lessonStudentDto;
+    //     return this.lessonService.assignStudents(id, studentsId);
+    // }
 }

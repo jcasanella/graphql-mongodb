@@ -1,5 +1,5 @@
 import { ArgsType, Field } from "@nestjs/graphql";
-import { IsDateString, IsString, MinLength } from 'class-validator';
+import { IsDateString, IsString, IsUUID, MinLength } from 'class-validator';
 
 @ArgsType()
 export class StudentDto {
@@ -20,4 +20,8 @@ export class StudentDto {
     @Field({ nullable: true })
     @IsDateString()
     dateOfBirth?: string;
+
+    @Field()
+    @IsUUID("4", { message: 'Invalid lessonId'})
+    lessonId: string;
 }

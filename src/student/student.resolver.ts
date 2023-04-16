@@ -21,7 +21,7 @@ export class StudentResolver {
 
     @Mutation('createStudent')
     async createStudent(@Args() studentDto: StudentDto): Promise<Student> {
-        const { name, surname, dateOfBirth } = studentDto;
-        return this.studentService.create(uuidv4(), name, surname, dateOfBirth);
+        const { lessonId, name, surname, dateOfBirth } = studentDto;
+        return this.studentService.create(uuidv4(), name, surname, dateOfBirth, lessonId);
     }
 }

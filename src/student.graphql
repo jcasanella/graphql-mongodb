@@ -11,5 +11,5 @@ type Query {
 }
 
 type Mutation {
-    createStudent(name: String!, surname: String!, dateOfBirth: String): Student
+    createStudent(lessonId: String!, name: String!, surname: String!, dateOfBirth: String): Student
 }

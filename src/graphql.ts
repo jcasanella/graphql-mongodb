@@ -9,7 +9,7 @@
 /* eslint-disable */
 
 export class Lesson {
-    _id: string;
+    _id?: Nullable<string>;
     name: string;
     startDate?: Nullable<string>;
     endDate?: Nullable<string>;
@@ -35,7 +35,7 @@ export abstract class IMutation {
 }
 
 export class Student {
-    _id: string;
+    _id?: Nullable<string>;
     name: string;
     surname?: Nullable<string>;
     dateOfBirth?: Nullable<string>;

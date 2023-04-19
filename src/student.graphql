@@ -1,5 +1,5 @@
 type Student {
-    _id: ID!
+    _id: ID
     name: String!
     surname: String
     dateOfBirth: String

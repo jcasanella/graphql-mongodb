@@ -22,6 +22,6 @@ export class StudentDto {
     dateOfBirth?: string;
 
     @Field()
-    @IsUUID("4", { message: 'Invalid lessonId'})
+    // @IsUUID("4", { message: 'Invalid lessonId'})
     lessonId: string;
 }

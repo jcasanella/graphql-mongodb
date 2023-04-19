@@ -3,7 +3,6 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Student } from './schema/student.schema';
 import { Lesson } from 'src/lesson/schema/lesson.schema';
-import { LessonModule } from 'src/lesson/lesson.module';
 
 @Injectable()
 export class StudentService {
@@ -16,18 +15,21 @@ export class StudentService {
     async create(id: string, name: string, surname: string, dateOfBirth: string, lessonId: string): Promise<Student> {
         this.logger.log(`create student with id ${id}`);
 
-        // const productFn = (lessonId: string, studentId: string) => this.lessonModel.findByIdAndUpdate(lessonId, { student: studentId}, { new: true } );
+        const createdStudent2 = this.studentModel.create({ name: name, surname: surname, dateOfBirth: dateOfBirth})
+            .then(student => {
+                console.log(`aaaaaaaaaaaaaaaaaaa ${lessonId} student: ${student._id} ${student.name}`);
 
-        // const createdStudent = this.studentModel.create({ _id: id, name: name, surname: surname, dateOfBirth: dateOfBirth})
-        //     .then(function(doc) {
-        //         return productFn(lessonId, doc._id);
-        //     })
+                const st = [student._id]
+                const less = this.lessonModel.findByIdAndUpdate(lessonId, { $addToSet: { students: { $each: st }}} , { new: true })
+                    .exec()
+                    .then(l => console.log(`${l.name}`))
+                console.log(`${less}`)
 
-        const createdStudent = await this.studentModel.create({ _id: id, name: name, surname: surname, dateOfBirth: dateOfBirth});
-        if (createdStudent) {
-            this.lessonModel.findByIdAndUpdate(lessonId, { student: createdStudent._id} );
-        }
-        return createdStudent;
+
+                return student;
+            })
+
+        return createdStudent2;
     }
 
     async findById(id: string): Promise<Student> {

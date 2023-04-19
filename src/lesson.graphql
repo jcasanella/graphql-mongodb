@@ -1,5 +1,5 @@
 type Lesson {
-    _id: ID!
+    _id: ID
     name: String!
     startDate: String
     endDate: String

@@ -18,7 +18,7 @@ import { StudentModule } from './student/student.module';
     }),
     MongooseModule.forRoot('mongodb://localhost/school'),
     LessonModule,
-    StudentModule
+    StudentModule,
   ],
 })
 export class AppModule {}

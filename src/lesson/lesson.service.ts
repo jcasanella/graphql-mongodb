@@ -5,24 +5,35 @@ import { Lesson } from './schema/lesson.schema';
 
 @Injectable()
 export class LessonService {
-    private readonly logger = new Logger(LessonService.name);
-    constructor(@InjectModel(Lesson.name) private readonly lessonModel: Model<Lesson>) {}
+  private readonly logger = new Logger(LessonService.name);
+  constructor(
+    @InjectModel(Lesson.name) private readonly lessonModel: Model<Lesson>,
+  ) {}
 
-    async create(name: string, startDate: string, endDate: string): Promise<Lesson> {
-        this.logger.log(`create lesson with name ${name}`);
-        const createdLesson = await this.lessonModel.create({name: name, startDate: startDate, endDate: endDate});
-        return createdLesson;
-    }
+  async create(
+    name: string,
+    startDate: string,
+    endDate: string,
+  ): Promise<Lesson> {
+    this.logger.log(`create lesson with name ${name}`);
+    const createdLesson = await this.lessonModel.create({
+      name: name,
+      startDate: startDate,
+      endDate: endDate,
+    });
 
-    async findById(id: string): Promise<Lesson> {
-        this.logger.log(`findById lesson with id ${id}`);
-        const lesson = await this.lessonModel.findById(id).exec();
-        return lesson;
-    }
+    return createdLesson;
+  }
 
-    async getAll(): Promise<Lesson[]> {
-        this.logger.log(`getAll lessons`);
-        const lessons = await this.lessonModel.find({});
-        return lessons;
-    }
+  async findById(id: string): Promise<Lesson> {
+    this.logger.log(`findById lesson with id ${id}`);
+    const lesson = await this.lessonModel.findById(id).exec();
+    return lesson;
+  }
+
+  async getAll(): Promise<Lesson[]> {
+    this.logger.log(`getAll lessons`);
+    const lessons = await this.lessonModel.find({});
+    return lessons;
+  }
 }

@@ -1,8 +1,10 @@
+scalar Date
+
 type Student {
     _id: ID
     name: String!
     surname: String
-    dateOfBirth: String
+    dateOfBirth: Date
 }
 
 type Query {
@@ -11,5 +13,5 @@ type Query {
 }
 
 type Mutation {
-    createStudent(lessonId: String!, name: String!, surname: String!, dateOfBirth: String): Student
+    createStudent(lessonId: String!, name: String!, surname: String!, dateOfBirth: Date): Student
 }

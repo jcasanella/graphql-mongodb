@@ -10,10 +10,10 @@ export class Lesson {
   name: string;
 
   @Prop({ required: false })
-  startDate?: string;
+  startDate?: Date;
 
   @Prop({ required: false })
-  endDate?: string;
+  endDate?: Date;
 
   idObj: Types.ObjectId;
 

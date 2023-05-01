@@ -1,8 +1,10 @@
+scalar Date
+
 type Lesson {
     _id: ID
     name: String!
-    startDate: String
-    endDate: String
+    startDate: Date
+    endDate: Date
     studentsId: [String]
 }
 
@@ -12,6 +14,6 @@ type Query {
 }
 
 type Mutation {
-    createLesson(name: String!, startDate: String, endDate: String): Lesson
+    createLesson(name: String!, startDate: Date, endDate: Date): Lesson
     assignStudents(id: String!, studentsId: [String!]!): Lesson
 }

@@ -12,7 +12,7 @@ export class Student {
   surname: string;
 
   @Prop()
-  dateOfBirth?: string;
+  dateOfBirth?: Date;
 }
 
 export const StudentSchema = SchemaFactory.createForClass(Student);

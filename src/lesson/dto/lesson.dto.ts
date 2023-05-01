@@ -11,10 +11,10 @@ export class LessonDto {
   readonly name: string;
 
   @Field({ nullable: true })
-  @IsDateString()
-  readonly startDate?: string;
+  @IsDateString({}, { message: 'StartDate is not a valid date' })
+  readonly startDate?: Date;
 
   @Field({ nullable: true })
-  @IsDateString()
-  readonly endDate?: string;
+  @IsDateString({}, { message: 'EndDate is not a valid date' })
+  readonly endDate?: Date;
 }

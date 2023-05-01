@@ -10,11 +10,7 @@ export class LessonService {
     @InjectModel(Lesson.name) private readonly lessonModel: Model<Lesson>,
   ) {}
 
-  async create(
-    name: string,
-    startDate: string,
-    endDate: string,
-  ): Promise<Lesson> {
+  async create(name: string, startDate: Date, endDate: Date): Promise<Lesson> {
     this.logger.log(`create lesson with name ${name}`);
     const createdLesson = await this.lessonModel.create({
       name: name,

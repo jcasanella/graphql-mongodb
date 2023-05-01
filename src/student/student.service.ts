@@ -15,7 +15,7 @@ export class StudentService {
   async create(
     name: string,
     surname: string,
-    dateOfBirth: string,
+    dateOfBirth: Date,
     lessonId: string,
   ): Promise<Student> {
     this.logger.log(`create student with name ${name}`);

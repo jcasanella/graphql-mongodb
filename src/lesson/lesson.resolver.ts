@@ -20,6 +20,7 @@ export class LessonResolver {
   @Mutation('createLesson')
   async createLesson(@Args() lessonDto: LessonDto): Promise<Lesson> {
     const { name, startDate, endDate } = lessonDto;
+    console.log(lessonDto);
     return this.lessonService.create(name, startDate, endDate);
   }
 }

@@ -1,3 +1,4 @@
+
 /*
  * -------------------------------------------------------
  * THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
@@ -10,8 +11,8 @@
 export class Lesson {
     _id?: Nullable<string>;
     name: string;
-    startDate?: Nullable<string>;
-    endDate?: Nullable<string>;
+    startDate?: Nullable<Date>;
+    endDate?: Nullable<Date>;
     studentsId?: Nullable<Nullable<string>[]>;
 }
 
@@ -26,18 +27,18 @@ export abstract class IQuery {
 }
 
 export abstract class IMutation {
-    abstract createLesson(name: string, startDate?: Nullable<string>, endDate?: Nullable<string>): Nullable<Lesson> | Promise<Nullable<Lesson>>;
+    abstract createLesson(name: string, startDate?: Nullable<Date>, endDate?: Nullable<Date>): Nullable<Lesson> | Promise<Nullable<Lesson>>;
 
     abstract assignStudents(id: string, studentsId: string[]): Nullable<Lesson> | Promise<Nullable<Lesson>>;
 
-    abstract createStudent(lessonId: string, name: string, surname: string, dateOfBirth?: Nullable<string>): Nullable<Student> | Promise<Nullable<Student>>;
+    abstract createStudent(lessonId: string, name: string, surname: string, dateOfBirth?: Nullable<Date>): Nullable<Student> | Promise<Nullable<Student>>;
 }
 
 export class Student {
     _id?: Nullable<string>;
     name: string;
     surname?: Nullable<string>;
-    dateOfBirth?: Nullable<string>;
+    dateOfBirth?: Nullable<Date>;
 }
 
 type Nullable<T> = T | null;

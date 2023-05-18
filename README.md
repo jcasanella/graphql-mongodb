@@ -81,3 +81,5 @@ pnpm nest g resolver student
 pnpm nest g service student
 
 docker run --name mongo -p 27017:27017 -d mongo
+kafkacat -b localhost:9094 -L
+kafkacat -b localhost:9094 -C -t lesson-topic -o beginning   

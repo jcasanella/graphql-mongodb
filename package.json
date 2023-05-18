@@ -8,6 +8,7 @@
   "scripts": {
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
+    "docker": "docker compose -f docker/docker-compose.yml up -d",
     "start": "nest start",
     "start:dev": "nest start --watch",
     "start:debug": "nest start --debug --watch",
@@ -26,6 +27,7 @@
     "@nestjs/common": "^9.0.0",
     "@nestjs/core": "^9.0.0",
     "@nestjs/graphql": "^11.0.4",
+    "@nestjs/microservices": "^9.4.1",
     "@nestjs/mongoose": "^9.2.2",
     "@nestjs/platform-express": "^9.0.0",
     "class-transformer": "^0.5.1",
@@ -33,6 +35,7 @@
     "graphql": "^16.6.0",
     "graphql-scalars": "^1.21.3",
     "graphql-tools": "^8.3.19",
+    "kafkajs": "^2.2.4",
     "mongoose": "^7.0.3",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0",

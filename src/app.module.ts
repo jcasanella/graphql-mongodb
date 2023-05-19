@@ -5,6 +5,7 @@ import { join } from 'path';
 import { LessonModule } from './lesson/lesson.module';
 import { MongooseModule } from '@nestjs/mongoose';
 import { StudentModule } from './student/student.module';
+import { KafkaModule } from './kafka/kafka.module';
 
 @Module({
   imports: [
@@ -19,6 +20,7 @@ import { StudentModule } from './student/student.module';
     MongooseModule.forRoot('mongodb://localhost/school'),
     LessonModule,
     StudentModule,
+    KafkaModule,
   ],
 })
 export class AppModule {}
